@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app {
+            background: #E0E0E0;
+            height: 500px;
+            width: 90%;
+            position: relative;
+            margin: 0 auto;
+            padding: 4em 2em;
+            overflow: scroll;
+            padding-bottom: 80px;
+        }
+        .main-title {
+            text-align: center;
+
+        }
+        .title {
+            color: #42b883;
+            font-size: 2em;
+        }
+        .content {
+            font-size: 1.5em;
+            font-style: italic;
+        }
+        .next {
+            background: #42b883;
+            color: white;
+            height: 49px;
+            width: 88px;
+            font-weight: bold;
+            border-radius: 45px;
+            position: absolute;
+            bottom: -51px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main-title">Welcome to my first Website using wordpress as backend</h1>
+        <div id="app">
+            <div v-if="!result">
+                    <h1>loading please wait</h1>
+            </div>
+            <div v-else>
+                    <h1 class="title">{{result.title.rendered}}</h1>
+                    <p class="content" v-html="result.content.rendered"></p>
+            </div>
+            <button class= "next" v-on:click="nextPost()">next</button>
+            
+                <!-- <p>{{}}</p> -->
+        </div>
+    
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</html>
